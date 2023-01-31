@@ -44,7 +44,7 @@ class UserController{
 
     static async singleUser(req,res){
         try {
-            const user = await User.find(req.paarams.id);
+            const user = await User.findById(req.params.id);
             if(!user) return res.status(404).json({status:"error",error:"not found"});
             return res.status(200).json({status:"success",data:user})
         } catch (error) {

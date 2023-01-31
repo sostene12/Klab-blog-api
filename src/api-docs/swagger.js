@@ -1,6 +1,7 @@
 import swaggerUi from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
 import { blogRouteDocs } from "./blogs.docs";
+import {userRouteDocs} from "./user.docs"
 
 
 const options = {
@@ -17,7 +18,7 @@ const options = {
           description: 'Development server',
         },
         {
-          url: 'https://production',
+          url: 'https://dead-blue-nightingale-kit.cyclic.app/',
           description: 'Production server',
         },
       ],
@@ -36,7 +37,7 @@ const options = {
           },
         },
       },
-      paths: {...blogRouteDocs},
+      paths: {...userRouteDocs,...blogRouteDocs},
     },
     apis: ['../routes/**/*.js'],
   }

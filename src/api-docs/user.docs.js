@@ -1,11 +1,6 @@
 const listAllUsers = {
     tags:['User'],
     description:"List all users",
-    security: [
-        {
-          token: [],
-        },
-      ],
     responses:{
         200:{
             description:"OK",
@@ -119,11 +114,6 @@ parameters:[
         example:"63caaf3527b29e1d399896da"
     }
 ],
-security: [
-    {
-      token: [],
-    },
-  ],
 responses:{
     200:{
         description:"OK",
@@ -152,11 +142,6 @@ parameters:[
         example:"63caaf3527b29e1d399896da"
     }
 ],
-security: [
-    {
-      token: [],
-    },
-  ],
 responses:{
     200:{
         description:"OK",
@@ -176,11 +161,6 @@ responses:{
 const updateUserById = {
 tags:['User'],
 description:"Update user by id",
-security: [
-    {
-      token: [],
-    },
-  ],
   parameters:[
     {
         name:"id",
