@@ -51,6 +51,30 @@ class UserController{
             return res.status(200).json({status:"error",error:error.message});
         }
     }
+
+    static async updateUser(req,res){
+        try {
+            const user = await User.findById(req.params.id);
+            if(!user) return res.status(404).json({status:"error",error:"not found"});
+            const salt = await bcrypt.genSalt(10);
+            req.body.password = await bcrypt.hash(req.body.password,salt);
+            const updatedUser = await User.findByIdAndUpdate(req.params.id,{$set:req.body})
+            return res.status(200).json({status:"success",data:updatedUser})
+        } catch (error) {
+            return res.status(200).json({status:"error",error:error.message});
+        }
+    }
+
+    static async deleteUser(req,res){
+        try {
+            const user = await User.findById(req.params.id);
+            if(!user) return res.status(404).json({status:"error",error:"not found"});
+            await User.findByIdAndDelete(req.params.id)
+            return res.status(200).json({status:"success",data:null,message:"user deleted!"})
+        } catch (error) {
+            return res.status(200).json({status:"error",error:error.message});
+        }
+    }
 }
 
 export default UserController;

@@ -216,7 +216,7 @@ export const userRouteDocs = {
 "/api/user/all":{
     get:listAllUsers,
 },
-"/api/user/create":{
+"/api/user/signup":{
     post:createUser,
 },
 "/api/user/login":{

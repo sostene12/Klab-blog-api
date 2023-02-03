@@ -48,6 +48,11 @@ const getBlogById = {
 const createBlog = {
     tags:['Blog'],
     description:"Create a Blog post",
+    security: [
+        {
+          token: [],
+        },
+      ],
     requestBody:{
         content:{
             "multipart/form-data":{

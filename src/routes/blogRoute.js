@@ -6,10 +6,10 @@ import {upload} from "../helpers/multer";
 
 const blogRoute = express.Router();
 
-blogRoute.post("/create",upload.single('image'),BlogController.createBlog);
+blogRoute.post("/create",upload.single('image'),verifyTokenAndRole,BlogController.createBlog);
 blogRoute.get("/all",BlogController.getAllBlogs);
 blogRoute.get("/:id",BlogController.singleBlog);
-blogRoute.delete("/delete/:id",BlogController.deleteBlog);
-blogRoute.put("/update/:id",upload.single('image'),BlogController.updateBlog);
+blogRoute.delete("/delete/:id",verifyTokenAndRole,BlogController.deleteBlog);
+blogRoute.put("/update/:id",upload.single('image'),verifyTokenAndRole,BlogController.updateBlog);
 
 export default blogRoute;

@@ -42,7 +42,7 @@ class BlogController {
 
   static async deleteBlog(req, res) {
     try {
-      const blog = await Todo.findById(req.params.id);
+      const blog = await Blog.findById(req.params.id);
       if (!blog) {
         return res
           .status(404)
@@ -51,7 +51,7 @@ class BlogController {
       await Blog.findByIdAndDelete(req.params.id);
       res
         .status(200)
-        .json({ status: "success", data: null, message: "deleted" });
+        .json({ status: "success", data: null, message: "Blog deleted" });
     } catch (error) {
       res.status(400).json({ status: "error", error: error.message });
     }
@@ -63,7 +63,7 @@ class BlogController {
       if (!blog) {
         return res
           .status(404)
-          .json({ status: "fail", error: "todo not found" });
+          .json({ status: "fail", error: "blog not found" });
       }
       await cloudinary.uploader.destroy(blog.image);
       const result = await cloudinary.uploader.upload(req.file.path);
