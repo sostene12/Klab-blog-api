@@ -4,10 +4,8 @@ const blogSchema = mongoose.Schema({
     title:{type:String},
     image:{type:String},
     description:{type:String},
-    // comments:{
-    //     type:mongoose.Schema.Types.ObjectId,
-    //     ref:'Comment'
-    // }
+    author:{type:String},
+    likes:{type:Number,default:0}
 },{timestamps:true});
 
 const Blog = mongoose.model('Blog',blogSchema);

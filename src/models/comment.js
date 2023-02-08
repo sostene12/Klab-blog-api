@@ -5,8 +5,11 @@ const commentSchema = mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
     },
+    blogId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Blog'
+    },
     comment:{type:String},
-    likes:{type:Number}
 },{timestamps:true});
 
 const Comment = mongoose.model('Comment',commentSchema);
