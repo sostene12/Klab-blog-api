@@ -24,7 +24,7 @@ const getEstateById = {
         {
             name:"id",
             in:"path",
-            description:"id of the blog",
+            description:"id of the estate",
             type:"string",
             example:"63caaf3527b29e1d399896da"
         }
@@ -54,16 +54,39 @@ const creatEstate = {
                 schema:{
                     type:"object",
                     properties:{
-                        title:{
-                            type:"string",
+                        province:{
+                            type:"string"
                         },
-                        description:{
-                            type:"string",
+                        district:{
+                            type:"string"
+                        },
+                        street:{
+                            type:"string"
                         },
                         image:{
                             type:"file",
-                            description:"the image of the blog post"
-                        }
+                        },
+                         price:{
+                            type:"string",
+                        },
+                        beds:{
+                            type:"number",
+                        },
+                        bath:{
+                            type:"number"
+                        },
+                        yearBuilt:{
+                            type:"number"
+                        },
+                        lotSize:{
+                            type:"string"
+                        },
+                        status:{
+                            type:"string"
+                        },
+                        description:{
+                            type:"string"
+                        } 
                     }
                 }
             }
@@ -92,7 +115,7 @@ const deleteEstate = {
         {
             name:"id",
             in:"path",
-            description:"id of the blog",
+            description:"id of the estate",
             type:"string"
         }
     ],
@@ -120,7 +143,7 @@ const updateEstate = {
         {
             name:"id",
             in:"path",
-            description:"id of the blog",
+            description:"id of the estate",
             type:"string"
         }
     ],
@@ -130,16 +153,39 @@ const updateEstate = {
                 schema:{
                     type:"object",
                     properties:{
-                        title:{
-                            type:"string",
+                        province:{
+                            type:"string"
                         },
-                        description:{
-                            type:"string",
+                        district:{
+                            type:"string"
+                        },
+                        street:{
+                            type:"string"
                         },
                         image:{
                             type:"file",
-                            description:"the image of the blog post"
-                        }
+                        },
+                         price:{
+                            type:"string",
+                        },
+                        beds:{
+                            type:"number",
+                        },
+                        bath:{
+                            type:"number"
+                        },
+                        yearBuilt:{
+                            type:"number"
+                        },
+                        lotSize:{
+                            type:"string"
+                        },
+                        status:{
+                            type:"string"
+                        },
+                        description:{
+                            type:"string"
+                        } 
                     }
                 }
             }

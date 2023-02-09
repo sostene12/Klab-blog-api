@@ -94,13 +94,13 @@ class EstateController {
                 await cloudinary.uploader.destroy(image)
             }
         }
-
         const files = req.files;
         const urls = [];
         for (const file of files) {
           const result = await cloudinary.uploader.upload(file.path);
           urls.push(result.secure_url);
         }
+        
         const updatedEstate =  await Estate.findByIdAndUpdate(req.params.id,{$set:{
             image: urls,
             location: {
