@@ -51,6 +51,9 @@ class BlogController {
           .status(404)
           .json({ status: "fail", error: "blog not found" });
       }
+      if(blog.image){
+        await cloudinary.uploader.destroy(blog.image);
+      }
       await Blog.findByIdAndDelete(req.params.id);
       res
         .status(200)

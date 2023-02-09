@@ -2,6 +2,7 @@ import swaggerUi from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
 import { blogRouteDocs } from "./blogs.docs";
 import {userRouteDocs} from "./user.docs"
+import {estateRouteDocs} from "./estate.docs"
 
 
 const options = {
@@ -25,6 +26,8 @@ const options = {
       tags: [
         { name: 'User', description: 'User Routes' },
         { name: 'Blog', description: 'Blog Routes' },
+        { name: 'Estates', description: 'Estates Routes' },
+        { name: 'Contact', description: 'Contact Routes' },
       ],
       components: {
         securitySchemes: {
@@ -37,7 +40,7 @@ const options = {
           },
         },
       },
-      paths: {...userRouteDocs,...blogRouteDocs},
+      paths: {...userRouteDocs,...blogRouteDocs,...estateRouteDocs},
     },
     apis: ['../routes/**/*.js'],
   }
