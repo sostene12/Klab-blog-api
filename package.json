@@ -22,13 +22,17 @@
     "@babel/node": "^7.20.7",
     "bcrypt": "^5.1.0",
     "cloudinary": "^1.33.0",
+    "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.1",
+    "passport": "^0.6.0",
+    "passport-google-oauth2": "^0.2.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^4.6.0"
   }

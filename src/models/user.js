@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const userSchema = mongoose.Schema({
+    googleId:{type:String},
     username:{type:String},
     email:{type:String},
     password:{type:String},

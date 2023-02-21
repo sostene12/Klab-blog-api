@@ -66,14 +66,16 @@ class UserController{
         }
     }
 
-    static async deleteUser(req,res){
+    static async deleteUser(req,res,next){
         try {
             const user = await User.findById(req.params.id);
-            if(!user) return res.status(404).json({status:"error",error:"not found"});
+            if(!user) {
+                throw new Error("user not found");
+            }
             await User.findByIdAndDelete(req.params.id)
             return res.status(200).json({status:"success",data:null,message:"user deleted!"})
         } catch (error) {
-            return res.status(200).json({status:"error",error:error.message});
+            return next(error);
         }
     }
 }
